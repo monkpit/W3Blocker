@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
+  "name": "W3Blocker",
+  "description": "Blocks W3Schools results from Google™ searches",
+  "version": "0.1",
   "icons": { "128": "images/icon.png" },
-  "browser_action": {
-    "default_icon": "images/icon.png",
-    "default_popup": "html/popup.html"
-  },
-  "background": { "scripts": ["js/background.js"] },
   "content_scripts": [{
     "matches": [ "http://*/*", "https://*/*" ],
-    "js": [ "js/content.js" ]
+    "include_globs": ["http://www.google.*/*", "https://www.google.*/*"],
+    "js": [ "js/content.js" ],
+    "run_at": "document_start"
   }],
   "options_page": "html/options.html",
   "devtools_page": "html/devtools.html",

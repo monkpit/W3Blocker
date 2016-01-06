@@ -16,4 +16,7 @@
   require('./modules/msg').init('ct', handlers);
 
   console.log('jQuery version:', $().jquery);
+  document.addEventListener("DOMContentLoaded", function elistenerDOMContentLoaded(event){
+      $('cite:contains(w3schools)').parents('.g').hide();
+  });
 })();
